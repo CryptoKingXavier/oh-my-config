@@ -1,2 +1,2 @@
 # oh-my-config
-Full-Stack Web Dev Configurations
+Full-Stack Web Dev Setup Configurations
