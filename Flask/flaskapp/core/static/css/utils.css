@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Cookie;
+    src: url(../fonts/Cookie-Regular.ttf);
+}
+
+body {
+    font-family: Cookie;
+    font-size: 1.25rem;
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+footer p {
+    margin-bottom: .25rem;
+}
+
+footer p:first-of-type a {
+    text-decoration: none;
+}
+
+footer p:first-of-type a img {
+    width: 30%;
+    height: 30%;
+}
+
+footer p:first-of-type a img:hover {
+    transform: scale(1.05);
+}

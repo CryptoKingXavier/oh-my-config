@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--  Bootstrap v4 CSS  -->
+  <link rel="stylesheet" href="{{ url_for('core.static', filename='css/bootstrap.min.css') }}" />
+
+  <link rel="stylesheet" href="{{ url_for('core.static', filename='css/utils.css') }}" />
+  <title>{% block title %}{% endblock title %}</title>
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{{ url_for('core.static', filename='images/favicon.png') }}" type="image/x-icon" />
+  <link rel="icon" href="{{ url_for('core.static', filename='images/favicon.png') }}" type="image/x-icon" />
+  {% block head %}{% endblock head %}
+</head>
+
+<body>
+  <section class="container m-auto text-center">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-info alert-dismissible fade show mt-2 m-auto" role="alert">
+              <strong>{{ message }}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </section>
+
+  <header>
+  </header>
+
+  {% block body %}{% endblock body %}
+
+  <footer class="mastfoot mt-auto text-muted text-center">
+    <div class="container">
+      <p class="float-right">
+        <a accesskey="t" href="#">
+          <img src="{{ url_for('core.static', filename='images/back-to-top.png') }}" alt="Back To Top" />
+        </a>
+      </p>
+      <p>CryptoKingXavier&copy;</p>
+    </div>
+  </footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap v4 JS -->
+  <script src="{{ url_for('core.static', filename='jquery/jquery.slim.min.js') }}"></script>
+  <script src="{{ url_for('core.static', filename='js/popper.min.js') }}"></script>
+  <script src="{{ url_for('core.static', filename='js/bootstrap.min.js') }}"></script>
+
+  {% block script %}{% endblock script %}
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('users.static', filename='css/auth.css') }}">
+{% endblock head %}
+
+{% block body %}
+  <section class="text-center center">
+    <h1>User Accounts Page</h1>
+    {% if current_user.is_authenticated %}
+      <h3>Hello, {{ current_user.username }}!</h3>
+      <a href="{{ url_for('notes.index') }}">Notes 📚</a>
+      <a href="{{ url_for('users.logout') }}">Logout</a>
+    {% else %}
+      <h3>Hello, Anonymous!</h3>
+      <a href="{{ url_for('users.signup') }}">Signup</a>
+      <a href="{{ url_for('users.login') }}">Login</a>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('users.static', filename='css/auth.css') }}">
+{% endblock head %}
+
+{% block body %}
+  <section class="text-center center">
+    <h1>Sign-Up Page</h1>
+    <form class="form-signin" method="post" action="{{ url_for('users.signup') }}">
+      <img class="mb-4" src="{{ url_for('users.static', filename='images/banner.png') }}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+      <label for="inputUsername" class="sr-only">Username</label>
+      <input type="text" name="username" id="inputUsername" maxlength="20" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name="password" id="inputPassword" maxlength="20" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <small><a href="{{ url_for('users.login') }}">Already a user? Sign in...</a></small>
+    </form>
+  </section>
+{% endblock %}

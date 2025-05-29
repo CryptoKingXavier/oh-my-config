@@ -1,0 +1,11 @@
+bcrypt
+Flask
+Flask-Bcrypt
+Flask-Login
+Flask-Migrate
+Flask-SQLAlchemy
+gunicorn
+mysql-connector-python
+psycopg2
+psycopg2-binary
+PyMySQL
